@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXColorPicker?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableColumn?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="root" prefHeight="886.0" prefWidth="1178.0" styleClass="stack-pane" stylesheets="@proglangdict-main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.FXMLController">
+   <VBox prefHeight="200.0" prefWidth="100.0">
+      <children>
+         <HBox prefHeight="58.0" prefWidth="1178.0" stylesheets="@proglangdict-main.css">
+            <children>
+               <JFXColorPicker prefHeight="43.0" prefWidth="66.0" />
+               <JFXDatePicker styleClass="light-cream-text" stylesheets="@proglangdict-main.css" />
+            </children>
+         </HBox>
+         <JFXTabPane prefHeight="824.0" prefWidth="1178.0" style="-fx-background-color: rgba(61, 70, 71, 1);" stylesheets="@proglangdict-main.css">
+            <tabs>
+             <Tab text="Designers">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1178.0">
+                        <children>
+                            <VBox maxHeight="854.0" maxWidth="1178.0" prefHeight="791.0" prefWidth="1178.0" spacing="10">
+                                <children>
+                                 <HBox alignment="CENTER" styleClass="box" stylesheets="@proglangdict-main.css">
+                                    <children>
+                                       <Label prefHeight="17.0" prefWidth="153.0" styleClass="title-label" text="Designers" />
+                                       <HBox prefHeight="40.0" prefWidth="155.0" />
+                                       <Label fx:id="designerTableviewCount" prefHeight="17.0" prefWidth="68.0" styleClass="title-label" />
+                                       <HBox prefHeight="40.0" prefWidth="82.0" />
+                                       <JFXButton fx:id="deleteDesignerButton" buttonType="RAISED" onAction="#deleteDesigner" prefHeight="40.0" prefWidth="84.0" styleClass="delete-button" stylesheets="@proglangdict-main.css" text="Delete">
+                                          <effect>
+                                             <Shadow />
+                                          </effect>
+                                          <cursor>
+                                             <Cursor fx:constant="OPEN_HAND" />
+                                          </cursor>
+                                       </JFXButton>
+                                       <HBox prefHeight="40.0" prefWidth="122.0" />
+                                       <JFXTextField fx:id="searchDesignerField" focusColor="#758bcd" prefHeight="25.0" prefWidth="236.0" promptText="Search..." stylesheets="@proglangdict-main.css" unFocusColor="#949494">
+                                          <styleClass>
+                                             <String fx:value="search" />
+                                             <String fx:value="light-cream-text" />
+                                          </styleClass></JFXTextField>
+                                    </children>
+                                 </HBox>
+                                    <JFXTreeTableView fx:id="designerTableview" prefHeight="724.0" prefWidth="1178.0" style="-fx-background-color: rgba(44, 50, 54, 1); color: -fx-border-color;" styleClass="table" stylesheets="@proglangdict-main.css">
+                                        <columns>
+                                            <JFXTreeTableColumn fx:id="dsgIdColumn" editable="false" minWidth="133" resizable="false" styleClass="table" text="Designer ID" />
+                                            <JFXTreeTableColumn fx:id="dsgNameColumn" minWidth="133" onEditCommit="#updateDesignerName" resizable="false" styleClass="table" text="Designer Name" />
+                                        </columns>
+                                    </JFXTreeTableView>
+                                 <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                       <JFXTextField fx:id="dsgIdFieldForDesigner" labelFloat="true" layoutX="10.0" layoutY="10.0" promptText="Designer ID" stylesheets="@proglangdict-main.css">
+                                          <styleClass>
+                                             <String fx:value="add-field" />
+                                             <String fx:value="light-cream-text" />
+                                          </styleClass></JFXTextField>
+                                       <JFXTextField fx:id="dsgNameFieldForDesigner" labelFloat="true" layoutX="280.0" layoutY="10.0" prefHeight="25.0" prefWidth="153.0" promptText="Designer Name">
+                                          <styleClass>
+                                             <String fx:value="add-field" />
+                                             <String fx:value="light-cream-text" />
+                                          </styleClass></JFXTextField>
+                                       <JFXButton fx:id="addDesignerButton" buttonType="RAISED" onAction="#getDesignerFromTextFields" prefHeight="40.0" prefWidth="141.0" ripplerFill="#401515" styleClass="button-raised" stylesheets="@proglangdict-main.css" text="Add" textAlignment="RIGHT" textFill="#322525">
+                                          <cursor>
+                                             <Cursor fx:constant="CLOSED_HAND" />
+                                          </cursor>
+                                       </JFXButton>
+                                    </children>
+                                 </HBox>
+                                </children>
+                            </VBox>
+                        </children>
+                     </AnchorPane>
+               </content>
+             </Tab>
+             <Tab text="Programming Languages">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <VBox prefHeight="788.0" prefWidth="1178.0">
+                              <children>
+                        
+                                          <HBox alignment="CENTER">
+                                        <Label prefHeight="17.0" prefWidth="153.0" styleClass="title-label" text="Programming Languages">Editable Tree Table View</Label>
+                                    <HBox prefHeight="40.0" prefWidth="155.0" />
+                                        <Label fx:id="editableTreeTableViewCount" prefHeight="17.0" prefWidth="68.0" styleClass="title-label" />
+                                    <HBox prefHeight="40.0" prefWidth="82.0" />
+                                    <JFXButton fx:id="deleteRowButton" buttonType="RAISED" onAction="#deleteRow" prefHeight="40.0" prefWidth="84.0" styleClass="delete-button" stylesheets="@proglangdict-main.css" text="Delete">
+                                       <effect>
+                                          <Shadow />
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <HBox prefHeight="40.0" prefWidth="122.0" />
+                                          <JFXTextField fx:id="searchField2" prefHeight="25.0" prefWidth="236.0" promptText="Search...">
+                                       <styleClass>
+                                          <String fx:value="search" />
+                                          <String fx:value="light-cream-text" />
+                                       </styleClass></JFXTextField>
+                                    </HBox>
+                                    <JFXTreeTableView fx:id="editableTreeTableView" onInputMethodTextChanged="#detectEditingTableCell" prefHeight="799.0" prefWidth="1178.0" style="-fx-background-color: rgba(44, 50, 54, 1);" styleClass="table">
+                                        <columns>
+                                            <JFXTreeTableColumn fx:id="prgIdEditableColumn" editable="false" minWidth="96.0" prefWidth="96.0" resizable="false" styleClass="table" text="ID" />
+                                            <JFXTreeTableColumn fx:id="prgNameEditableColumn" minWidth="133" onEditCommit="#updatePrgName" prefWidth="217.0" resizable="false" styleClass="table" text="Name" />
+                                            <JFXTreeTableColumn fx:id="firstAppearedEditableColumn" minWidth="122.0" onEditCommit="#updateFirstAppeared" prefWidth="123.0" resizable="false" styleClass="table" text="First Appeared" />
+                                            <JFXTreeTableColumn fx:id="dsgIdEditableColumn" minWidth="38.0" onEditCommit="#updateDsgId" prefWidth="96.0" resizable="false" styleClass="table" text="Designer ID" />
+                                            <JFXTreeTableColumn fx:id="dsgNameEditableColumn" editable="false" minWidth="133" prefWidth="284.0" resizable="false" styleClass="table" text="Designer Name" />
+                                        </columns>
+                                    </JFXTreeTableView>
+                                 <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                       <JFXTextField fx:id="idField" labelFloat="true" onInputMethodTextChanged="#puripuriIDText" promptText="ID" stylesheets="@proglangdict-main.css">
+                                          <styleClass>
+                                             <String fx:value="add-field" />
+                                             <String fx:value="light-cream-text" />
+                                          </styleClass></JFXTextField>
+                                       <JFXTextField fx:id="nameField" labelFloat="true" promptText="Name">
+                                          <styleClass>
+                                             <String fx:value="add-field" />
+                                             <String fx:value="light-cream-text" />
+                                          </styleClass></JFXTextField>
+                                       <JFXTextField fx:id="firstAppearedField" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="120.0" promptText="First Appeared Year">
+                                          <styleClass>
+                                             <String fx:value="add-field" />
+                                             <String fx:value="light-cream-text" />
+                                          </styleClass></JFXTextField>
+                                       <JFXTextField fx:id="dsgIdField" labelFloat="true" layoutX="10.0" layoutY="10.0" promptText="Designer ID">
+                                          <styleClass>
+                                             <String fx:value="add-field" />
+                                             <String fx:value="light-cream-text" />
+                                          </styleClass></JFXTextField>
+                                       <JFXTextField fx:id="dsgNameField" labelFloat="true" layoutX="280.0" layoutY="10.0" prefHeight="25.0" prefWidth="153.0" promptText="Designer Name">
+                                          <styleClass>
+                                             <String fx:value="add-field" />
+                                             <String fx:value="light-cream-text" />
+                                          </styleClass></JFXTextField>
+                                       <JFXButton fx:id="addButton" buttonType="RAISED" onAction="#getStringFromTextFields" prefHeight="40.0" prefWidth="125.0" ripplerFill="#401515" styleClass="button-raised" stylesheets="@proglangdict-main.css" text="Add" textFill="#322525">
+                                          <cursor>
+                                             <Cursor fx:constant="CLOSED_HAND" />
+                                          </cursor>
+                                       </JFXButton>
+                                    </children>
+                                 </HBox>
+                              </children>
+                           </VBox>
+                        </children>
+                     </AnchorPane>
+               </content>
+             </Tab>
+            </tabs>
+         </JFXTabPane>
+      </children>
+   </VBox>
+</StackPane>

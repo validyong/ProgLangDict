@@ -1,0 +1,85 @@
+.button-raised {
+    -fx-padding: 0.7em 0.57em;
+    -fx-font-size: 14px;
+    -jfx-button-type: RAISED;
+    -fx-background-color: rgb(77, 102, 204);
+    /* -fx-pref-width: 200; */
+    -fx-text-fill: WHITE;
+}
+
+.delete-button {
+    -fx-padding: 0.7em 0.57em;
+    -fx-font-size: 14px;
+    -jfx-button-type: RAISED;
+    -fx-background-color: rgb(177, 2, 104);
+    /* -fx-pref-width: 200; */
+    -fx-text-fill: WHITE;
+}
+
+.stack-pane {
+   -fx-background-color: rgb(49, 63, 64);
+}
+
+.tab {
+   -fx-background-color: rgb(49, 63, 64);
+   -fx-border-width: 0px;
+}
+
+.table {
+    -fx-control-inner-background: rgba(32, 42, 50, 1);
+    -fx-accent: derive(-fx-control-inner-background, -40%);
+    -fx-cell-hover-color: derive(-fx-control-inner-background, -20%);
+    -fx-border-width: 0px;
+}
+
+.box {
+}
+
+.search {
+    -fx-prompt-text-fill: #a0a0a0;
+}
+
+.add-field {
+    -fx-prompt-text-fill: #a0a0a0;
+}
+
+/*
+    The tab bar
+*/
+
+.jfx-tab-pane .headers-region {
+    -fx-background-color: rgb(49, 63, 64);
+}
+.jfx-tab-pane .tab-header-background {
+    -fx-background-color: rgb(49, 63, 64);
+}
+.jfx-tab-pane .tab-selected-line {
+    -fx-stroke: #75bc1b;
+    -fx-stroke-width: 3pt;
+}
+.jfx-tab-pane .tab-header-area .tab-selected-line {
+    -fx-background-color: #ffffff;
+}
+
+.jfx-tree-table-view .headers-region {
+    -fx-background-color: rgb(49, 63, 64);
+}
+
+.jfx-tree-table-view .jfx-tree-table-column {
+    -fx-background-color: rgb(49, 63, 64);
+    -fx-border-width: 0;
+}
+
+.jfx-tree-table-view > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:selected {
+    -fx-background-color: rgba(53, 93, 124, 1);
+}
+
+
+.deep-border {
+    -fx-border-color: black ;
+    -fx-border-width: 5 ;
+}
+
+.light-cream-text {
+    -fx-text-fill: rgb(364, 364, 364);
+}
